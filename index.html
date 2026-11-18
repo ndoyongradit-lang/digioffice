@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="DigiOffice – Layanan administrasi digital profesional di Surakarta: pengetikan dokumen Word, pengolahan data Microsoft Excel, dan desain grafis dasar." />
+    <title>DigiOffice – Jasa Administrasi Digital Profesional</title>
+
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <!-- ============================================================
+       NAVBAR
+  ============================================================ -->
+    <header class="navbar" id="navbar">
+        <div class="container navbar__inner">
+            <a href="#beranda" class="navbar__logo" title="DigiOffice Beranda">
+                <span class="logo-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                        <line x1="8" y1="21" x2="16" y2="21" />
+                        <line x1="12" y1="17" x2="12" y2="21" />
+                    </svg>
+                </span>
+                <span class="logo-text">Digi<span class="logo-accent">Office</span></span>
+            </a>
+
+            <nav class="navbar__links" id="navLinks" aria-label="Navigasi Utama">
+                <a href="#beranda" class="nav-link active">Beranda</a>
+                <a href="#layanan" class="nav-link">Layanan</a>
+                <a href="#harga" class="nav-link">Harga</a>
+                <a href="#kalkulator" class="nav-link">Kalkulator</a>
+                <a href="#tentang" class="nav-link">Tentang</a>
+                <a href="#kontak" class="nav-link">Kontak</a>
+            </nav>
+
+            <div class="navbar__actions">
+                <a href="#pesan" class="btn btn--primary btn--sm">Pesan Sekarang</a>
+                <button class="hamburger" id="hamburger" aria-label="Buka menu navigasi" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Drawer -->
+    <div class="mobile-menu" id="mobileMenu" aria-label="Menu Mobile">
+        <a href="#beranda" class="mobile-link">Beranda</a>
+        <a href="#layanan" class="mobile-link">Layanan</a>
+        <a href="#harga" class="mobile-link">Harga</a>
+        <a href="#kalkulator" class="mobile-link">Kalkulator Estimasi</a>
+        <a href="#tentang" class="mobile-link">Tentang Kami</a>
+        <a href="#kontak" class="mobile-link">Kontak</a>
+        <a href="admin.html" class="mobile-link mobile-link--admin">Admin Workspace</a>
+        <a href="#pesan" class="btn btn--primary btn--block" style="margin-top: 0.75rem;">Pesan Sekarang</a>
+    </div>
+
+
+    <!-- ============================================================
+       HERO SECTION
+  ============================================================ -->
+    <section class="hero" id="beranda">
+        <div class="container hero__inner">
+            <div class="hero__content">
+                <div class="badge">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                    </svg>
+                    <span>Jasa Administrasi Digital • Surakarta</span>
+                </div>
+
+                <h1 class="hero__title">
+                    Solusi Administrasi Digital<br />
+                    <span class="text-blue">Cepat, Rapi & Profesional</span>
+                </h1>
+
+                <p class="hero__desc">
+                    DigiOffice membantu mahasiswa, akademisi, dan pelaku usaha menyelesaikan pekerjaan pengetikan
+                    dokumen, pengolahan data spreadsheet, serta desain grafis kebutuhan promosi dengan standar kualitas
+                    terbaik.
+                </p>
+
+                <div class="hero__cta">
+                    <a href="#layanan" class="btn btn--primary">
+                        Lihat Layanan
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                            <polyline points="12 5 19 12 12 19" />
+                        </svg>
+                    </a>
+                    <a href="#pesan" class="btn btn--outline">Pesan Sekarang</a>
+                </div>
+
+                <div class="hero__stats">
+                    <div class="stat">
+                        <strong>50+</strong>
+                        <span>Klien Puas</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat">
+                        <strong>3</strong>
+                        <span>Layanan Utama</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat">
+                        <strong>24 Jam</strong>
+                        <span>Respons Cepat</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hero Visual: Workspace Dashboard Mock -->
+            <div class="hero__visual" aria-hidden="true">
+                <div class="workspace-card">
+                    <div class="workspace-card__header">
+                        <div class="window-dots">
+                            <span class="dot dot--red"></span>
+                            <span class="dot dot--yellow"></span>
+                            <span class="dot dot--green"></span>
+                        </div>
+                        <div class="window-title">DigiOffice Workspace Console</div>
+                        <div class="window-status">
+                            <span class="status-pulse"></span>
+                            <span>Online</span>
+                        </div>
+                    </div>
+
+                    <div class="workspace-card__body">
+                        <!-- Item 1: Document -->
+                        <div class="workspace-row">
+                            <div class="workspace-row__icon icon-box--blue">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                                    <polyline points="14 2 14 8 20 8" />
+                                </svg>
+                            </div>
+                            <div class="workspace-row__info">
+                                <strong>Laporan_Skripsi_Final.docx</strong>
+                                <span>45 Halaman • Standar Format Akademik</span>
+                            </div>
+                            <span class="tag tag--green">Siap Kirim</span>
+                        </div>
+
+                        <!-- Item 2: Excel -->
+                        <div class="workspace-row">
+                            <div class="workspace-row__icon icon-box--green">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" />
+                                    <line x1="3" y1="9" x2="21" y2="9" />
+                                    <line x1="9" y1="3" x2="9" y2="21" />
+                                </svg>
+                            </div>
+                            <div class="workspace-row__info">
+                                <strong>Rekapitulasi_Keuangan_Q1.xlsx</strong>
+                                <span>Formula Dinamis & Pivot Table Rekap</span>
+                            </div>
+                            <span class="tag tag--blue">Diproses</span>
+                        </div>
+
+                        <!-- Item 3: Design -->
+                        <div class="workspace-row">
+                            <div class="workspace-row__icon icon-box--purple">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <path d="M8 14s1.5 2 4 2 4-2 4-2" />
+                                    <line x1="9" y1="9" x2="9.01" y2="9" />
+                                    <line x1="15" y1="9" x2="15.01" y2="9" />
+                                </svg>
+                            </div>
+                            <div class="workspace-row__info">
+                                <strong>Banner_Promosi_Digital.png</strong>
+                                <span>High Resolution • RGB Siap Unggah</span>
+                            </div>
+                            <span class="tag tag--purple">Revisi 1x</span>
+                        </div>
+                    </div>
+
+                    <div class="workspace-card__footer">
+                        <div class="footer-metric">
+                            <span class="metric-label">Tingkat Ketepatan Waktu</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 98%;"></div>
+                            </div>
+                        </div>
+                        <span class="metric-value">98% On-Time</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================================
+       LAYANAN
+  ============================================================ -->
+    <section class="section section--alt" id="layanan">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Layanan Profesional</span>
+                <h2 class="section-title">Tiga Layanan Utama DigiOffice</h2>
+                <p class="section-desc">Fokus pada kualitas, kerapian format, dan ketepatan tenggat waktu pengerjaan.
+                </p>
+            </div>
+
+            <div class="services-grid">
+
+                <!-- Layanan 1: Pengetikan -->
+                <div class="service-card">
+                    <div class="service-card__icon icon--blue">
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                            <polyline points="14 2 14 8 20 8" />
+                            <line x1="16" y1="13" x2="8" y2="13" />
+                            <line x1="16" y1="17" x2="8" y2="17" />
+                            <polyline points="10 9 9 9 8 9" />
+                        </svg>
+                    </div>
+                    <h3 class="service-card__title">Jasa Pengetikan Dokumen</h3>
+                    <p class="service-card__desc">
+                        Pengetikan naskah tulisan tangan, dokumen cetak, laporan magang, skripsi, dan surat dinas dengan
+                        margin dan penomoran rapi sesuai panduan.
+                    </p>
+                    <ul class="service-card__features">
+                        <li>Format Microsoft Word (.docx) & PDF</li>
+                        <li>Standar penomoran halaman & daftar isi</li>
+                        <li>Pengecekan ejaan dan margin rapi</li>
+                        <li>Gratis 1x revisi penyesuaian minor</li>
+                    </ul>
+                    <div class="service-card__footer">
+                        <span class="price-tag">Mulai Rp5.000 / halaman</span>
+                        <a href="#pesan" class="btn btn--primary btn--sm" data-service="Pengetikan Dokumen">Pesan</a>
+                    </div>
+                </div>
+
+                <!-- Layanan 2: Excel (Featured) -->
+                <div class="service-card service-card--featured">
+                    <div class="service-card__badge">Terpopuler</div>
+                    <div class="service-card__icon icon--green">
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                            <line x1="3" y1="9" x2="21" y2="9" />
+                            <line x1="3" y1="15" x2="21" y2="15" />
+                            <line x1="9" y1="3" x2="9" y2="21" />
+                            <line x1="15" y1="3" x2="15" y2="21" />
+                        </svg>
+                    </div>
+                    <h3 class="service-card__title">Pengolahan Data Excel</h3>
+                    <p class="service-card__desc">
+                        Penyusunan data mentah, otomasi kalkulasi menggunakan formula/rumus, perapian tabel, pembuatan
+                        grafik informatif, serta ringkasan pivot.
+                    </p>
+                    <ul class="service-card__features">
+                        <li>Input, validasi, dan penyortiran data</li>
+                        <li>Formula matematika & logika (VLOOKUP/XLOOKUP/IF)</li>
+                        <li>Pembuatan Pivot Table & ringkasan berkala</li>
+                        <li>Template laporan keuangan sederhana</li>
+                    </ul>
+                    <div class="service-card__footer">
+                        <span class="price-tag">Mulai Rp10.000 / pekerjaan</span>
+                        <a href="#pesan" class="btn btn--primary btn--sm" data-service="Pengolahan Data Excel">Pesan</a>
+                    </div>
+                </div>
+
+                <!-- Layanan 3: Desain Grafis -->
+                <div class="service-card">
+                    <div class="service-card__icon icon--purple">
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="13.5" cy="6.5" r=".5" />
+                            <circle cx="17.5" cy="10.5" r=".5" />
+                            <circle cx="8.5" cy="7.5" r=".5" />
+                            <circle cx="6.5" cy="12.5" r=".5" />
+                            <path
+                                d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z" />
+                        </svg>
+                    </div>
+                    <h3 class="service-card__title">Desain Grafis Dasar</h3>
+                    <p class="service-card__desc">
+                        Pembuatan materi visual penunjang bisnis dan tugas: poster kegiatan, flyer promosi, banner
+                        marketplace, dan logo sederhana siap pakai.
+                    </p>
+                    <ul class="service-card__features">
+                        <li>Poster acara & flyer promosi digital</li>
+                        <li>Banner etalase toko & media sosial</li>
+                        <li>Logo sederhana untuk UMKM & komunitas</li>
+                        <li>Format PNG transparan & file cetak PDF</li>
+                    </ul>
+                    <div class="service-card__footer">
+                        <span class="price-tag">Mulai Rp15.000 / desain</span>
+                        <a href="#pesan" class="btn btn--primary btn--sm" data-service="Desain Grafis">Pesan</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================================
+       DAFTAR HARGA
+  ============================================================ -->
+    <section class="section" id="harga">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Biaya Terjangkau</span>
+                <h2 class="section-title">Daftar Harga Layanan</h2>
+                <p class="section-desc">Tarif transparan tanpa biaya tersembunyi. Estimasi awal dihitung dari harga
+                    dasar tiap kategori.</p>
+            </div>
+
+            <div class="pricing-grid">
+
+                <!-- Pricing 1: Pengetikan -->
+                <div class="pricing-card">
+                    <h3 class="pricing-card__title">Pengetikan Dokumen</h3>
+                    <div class="pricing-card__price">
+                        <span class="price-amount">Rp5.000</span>
+                        <span class="price-unit">/ halaman</span>
+                    </div>
+                    <p class="pricing-card__sub">Cocok untuk tugas, skripsi, makalah & dokumen administrasi.</p>
+                    <ul class="pricing-card__list">
+                        <li>✔ Dokumen rapi format .docx / .pdf</li>
+                        <li>✔ Standar font & spasi sesuai pedoman</li>
+                        <li>✔ Pembuatan daftar isi & tabel</li>
+                        <li>✔ Gratis 1x revisi minor</li>
+                        <li class="muted">✗ Pengetikan rumus rumit (dikenakan penyesuaian)</li>
+                    </ul>
+                    <a href="#pesan" class="btn btn--outline btn--block" data-service="Pengetikan Dokumen">Pilih
+                        Pengetikan</a>
+                </div>
+
+                <!-- Pricing 2: Excel (Featured) -->
+                <div class="pricing-card pricing-card--featured">
+                    <div class="pricing-card__badge">Paling Diminati</div>
+                    <h3 class="pricing-card__title">Pengolahan Data Excel</h3>
+                    <div class="pricing-card__price">
+                        <span class="price-amount">Rp10.000</span>
+                        <span class="price-unit">/ pekerjaan</span>
+                    </div>
+                    <p class="pricing-card__sub">Solusi rekapitulasi cepat untuk administrasi toko & kantor.</p>
+                    <ul class="pricing-card__list">
+                        <li>✔ Input & perapian data mentah</li>
+                        <li>✔ Rumus hitung otomatis (SUM, IF, LOOKUP)</li>
+                        <li>✔ Pivot table & visualisasi grafik</li>
+                        <li>✔ File terstruktur siap cetak atau analisis</li>
+                        <li>✔ Gratis 1x revisi formula</li>
+                    </ul>
+                    <a href="#pesan" class="btn btn--primary btn--block" data-service="Pengolahan Data Excel">Pilih
+                        Pengolahan Data</a>
+                </div>
+
+                <!-- Pricing 3: Desain -->
+                <div class="pricing-card">
+                    <h3 class="pricing-card__title">Desain Grafis Dasar</h3>
+                    <div class="pricing-card__price">
+                        <span class="price-amount">Rp15.000</span>
+                        <span class="price-unit">/ desain</span>
+                    </div>
+                    <p class="pricing-card__sub">Visual komunikatif untuk kebutuhan konten & promosi.</p>
+                    <ul class="pricing-card__list">
+                        <li>✔ Desain poster, flyer, & feed promosi</li>
+                        <li>✔ Resolusi tinggi siap tayang (HD 1080p)</li>
+                        <li>✔ Format JPG, PNG (transparan), & PDF cetak</li>
+                        <li>✔ Penyesuaian warna identitas brand</li>
+                        <li>✔ Gratis 1x revisi tata letak</li>
+                    </ul>
+                    <a href="#pesan" class="btn btn--outline btn--block" data-service="Desain Grafis">Pilih Desain
+                        Grafis</a>
+                </div>
+
+            </div>
+
+            <div class="pricing-note">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    style="color:var(--secondary); flex-shrink:0;">
+                    <circle cx="12" cy="12" r="10" />
+                    <line x1="12" y1="16" x2="12" y2="12" />
+                    <line x1="12" y1="8" x2="12.01" y2="8" />
+                </svg>
+                <span>
+                    <strong>Keterangan Biaya:</strong> Harga di atas merupakan estimasi awal. Harga final dapat
+                    disesuaikan berdasarkan tingkat kerumitan, volume pekerjaan, dan urgensi tenggat waktu. Admin
+                    DigiOffice akan mengonfirmasi total biaya resmi sebelum pengerjaan dimulai.
+                </span>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================================
+       KALKULATOR ESTIMASI
+  ============================================================ -->
+    <section class="section section--alt" id="kalkulator">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Simulasi Biaya</span>
+                <h2 class="section-title">Kalkulator Estimasi Biaya</h2>
+                <p class="section-desc">Pilih layanan dan masukkan jumlah untuk melihat perkiraan biaya sebelum
+                    melakukan pemesanan.</p>
+            </div>
+
+            <div class="calculator-wrap">
+                <!-- Input Form -->
+                <div class="calculator-form">
+                    <h3 class="calculator-form__title">Parameter Perhitungan</h3>
+
+                    <div class="form-group">
+                        <label class="form-label" for="calc-service">Pilih Kategori Layanan</label>
+                        <select class="form-control" id="calc-service">
+                            <option value="">-- Pilih Jenis Layanan --</option>
+                            <option value="pengetikan">Jasa Pengetikan Dokumen (Rp5.000 / halaman)</option>
+                            <option value="excel">Pengolahan Data Excel (Rp10.000 / pekerjaan)</option>
+                            <option value="desain">Desain Grafis Dasar (Rp15.000 / desain)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="calc-qty">
+                            Jumlah Pekerjaan <span id="calc-unit-label" class="unit-helper">(halaman / pekerjaan /
+                                desain)</span>
+                        </label>
+                        <input type="number" class="form-control" id="calc-qty" min="1" value="1"
+                            placeholder="Masukkan angka, contoh: 5" />
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="calc-complexity">Tingkat Kesulitan Pekerjaan</label>
+                        <select class="form-control" id="calc-complexity">
+                            <option value="1">Standar (Pengganda 1.0x) — Format normal / ketikan biasa</option>
+                            <option value="1.5">Sedang (Pengganda 1.5x) — Ada tabel / formula dasar / revisi tata letak
+                            </option>
+                            <option value="2">Kompleks (Pengganda 2.0x) — Rumus matematika / naskah tulisan tangan sulit
+                            </option>
+                        </select>
+                    </div>
+
+                    <button type="button" class="btn btn--primary btn--block" id="calc-btn">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <rect x="4" y="2" width="16" height="20" rx="2" />
+                            <line x1="8" y1="6" x2="16" y2="6" />
+                            <line x1="8" y1="10" x2="16" y2="10" />
+                            <line x1="8" y1="14" x2="12" y2="14" />
+                        </svg>
+                        Hitung Estimasi Otomatis
+                    </button>
+                </div>
+
+                <!-- Result Box -->
+                <div class="calculator-result" id="calc-result">
+                    <!-- Placeholder State -->
+                    <div class="result-placeholder">
+                        <div class="result-placeholder__icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5">
+                                <rect x="4" y="2" width="16" height="20" rx="2" />
+                                <line x1="8" y1="6" x2="16" y2="6" />
+                                <line x1="8" y1="10" x2="16" y2="10" />
+                                <line x1="8" y1="14" x2="12" y2="14" />
+                            </svg>
+                        </div>
+                        <h4>Belum Ada Perhitungan</h4>
+                        <p>Silakan tentukan jenis layanan, jumlah, serta tingkat kesulitan di samping, lalu klik tombol
+                            "Hitung Estimasi Otomatis".</p>
+                    </div>
+
+                    <!-- Active Result Content -->
+                    <div class="result-content" id="result-content" style="display: none;">
+                        <h4>Rincian Estimasi Biaya</h4>
+                        <table class="result-table">
+                            <tbody>
+                                <tr>
+                                    <td>Jenis Layanan</td>
+                                    <td id="res-service">–</td>
+                                </tr>
+                                <tr>
+                                    <td>Volume / Jumlah</td>
+                                    <td id="res-qty">–</td>
+                                </tr>
+                                <tr>
+                                    <td>Tarif Dasar</td>
+                                    <td id="res-unit-price">–</td>
+                                </tr>
+                                <tr>
+                                    <td>Tingkat Kesulitan</td>
+                                    <td id="res-complexity">–</td>
+                                </tr>
+                                <tr class="result-total">
+                                    <td><strong>Total Estimasi</strong></td>
+                                    <td id="res-total"><strong>Rp0</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <p class="result-note">
+                            * Perhitungan ini adalah estimasi awal. Harga resmi akan dikonfirmasi oleh admin saat
+                            konfirmasi pemesanan.
+                        </p>
+
+                        <button type="button" class="btn btn--primary btn--block" id="calc-to-order">
+                            Lanjut ke Formulir Pemesanan →
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================================
+       FORM PEMESANAN
+  ============================================================ -->
+    <section class="section" id="pesan">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Pemesanan Langsung</span>
+                <h2 class="section-title">Formulir Pemesanan Layanan</h2>
+                <p class="section-desc">Lengkapi informasi di bawah ini. Setelah dikirim, Anda akan langsung diarahkan
+                    ke WhatsApp admin DigiOffice bersama ringkasan pesanan.</p>
+            </div>
+
+            <div class="order-wrap">
+                <form class="order-form" id="orderForm" novalidate>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label" for="order-name">Nama Pemesan <span
+                                    class="required">*</span></label>
+                            <input type="text" class="form-control" id="order-name"
+                                placeholder="Contoh: Radit Rahmadhan" required />
+                            <span class="form-error" id="err-name"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="order-service">Jenis Layanan <span
+                                    class="required">*</span></label>
+                            <select class="form-control" id="order-service" required>
+                                <option value="">-- Pilih Jenis Layanan --</option>
+                                <option value="Pengetikan Dokumen">Jasa Pengetikan Dokumen</option>
+                                <option value="Pengolahan Data Excel">Pengolahan Data Microsoft Excel</option>
+                                <option value="Desain Grafis">Desain Grafis Dasar</option>
+                            </select>
+                            <span class="form-error" id="err-service"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="order-details">Detail & Instruksi Pekerjaan <span
+                                class="required">*</span></label>
+                        <textarea class="form-control" id="order-details" rows="4"
+                            placeholder="Jelaskan kebutuhan Anda: perkiraan jumlah halaman/data, format yang diharapkan (misal margin 4-4-3-3 / rumus Excel yang dicari), atau catatan khusus lainnya."
+                            required></textarea>
+                        <span class="form-error" id="err-details"></span>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label" for="order-deadline">Tenggat Waktu (Deadline) <span
+                                    class="required">*</span></label>
+                            <input type="date" class="form-control" id="order-deadline" required />
+                            <span class="form-error" id="err-deadline"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="order-budget">Perkiraan Anggaran / Budget (Opsional)</label>
+                            <input type="text" class="form-control" id="order-budget"
+                                placeholder="Contoh: Rp50.000 (Bisa dari kalkulator)" />
+                        </div>
+                    </div>
+
+                    <div class="order-note">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="12" cy="12" r="10" />
+                            <line x1="12" y1="16" x2="12" y2="12" />
+                            <line x1="12" y1="8" x2="12.01" y2="8" />
+                        </svg>
+                        <span>
+                            <strong>Konfirmasi Langsung:</strong> Data pesanan akan disiapkan dalam format teks otomatis
+                            dan dibuka di WhatsApp admin (<strong>081575673484</strong>). Tidak diperlukan pendaftaran
+                            akun.
+                        </span>
+                    </div>
+
+                    <button type="submit" class="btn btn--primary btn--block btn--lg" id="submit-order">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z" />
+                        </svg>
+                        Kirim Pesanan via WhatsApp
+                    </button>
+                </form>
+
+                <!-- Order Summary Box (Appears after submission) -->
+                <div class="order-summary" id="orderSummary" style="display: none;">
+                    <div class="summary-header">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                            <polyline points="22 4 12 14.01 9 11.01" />
+                        </svg>
+                        <h4 class="summary-title">Ringkasan Pesanan Anda</h4>
+                    </div>
+                    <div class="summary-body" id="summaryBody"></div>
+                    <div class="summary-actions">
+                        <button type="button" class="btn btn--outline btn--sm" id="summary-edit">
+                            ← Perbaiki Data Formulir
+                        </button>
+                        <span class="summary-tip">Jendela WhatsApp terbuka secara otomatis. Jika tidak muncul, periksa
+                            izin pop-up browser Anda.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================================
+       TENTANG KAMI
+  ============================================================ -->
+    <section class="section section--alt" id="tentang">
+        <div class="container">
+            <div class="about-wrap">
+                <div class="about-content">
+                    <span class="section-label">Tentang Kami</span>
+                    <h2 class="section-title" style="text-align: left;">
+                        Mitra Administrasi Digital<br />Terpercaya di Surakarta
+                    </h2>
+                    <p>
+                        <strong>DigiOffice</strong> didirikan sebagai solusi praktis atas tingginya kebutuhan
+                        administrasi, penulisan naskah akademik, pengolahan spreadsheet data, dan desain grafis promosi
+                        yang rapi, cepat, serta terjangkau.
+                    </p>
+                    <p>
+                        Beroperasi di <strong>Surakarta, Jawa Tengah</strong>, kami melayani mahasiswa, pengusaha UMKM,
+                        instansi, dan masyarakat umum di seluruh Indonesia dengan komunikasi langsung via WhatsApp tanpa
+                        birokrasi berbelit.
+                    </p>
+
+                    <div class="about-highlights">
+                        <div class="highlight-item">
+                            <div class="highlight-icon icon--blue">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <polyline points="12 6 12 12 16 14" />
+                                </svg>
+                            </div>
+                            <div>
+                                <strong>Pengerjaan Cepat & Tepat Waktu</strong>
+                                <p>Jadwal disepakati di awal dan diselesaikan sesuai kesepakatan.</p>
+                            </div>
+                        </div>
+
+                        <div class="highlight-item">
+                            <div class="highlight-icon icon--green">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <strong>Komunikasi Transparan</strong>
+                                <p>Konsultasi langsung dengan admin via WhatsApp kapan saja.</p>
+                            </div>
+                        </div>
+
+                        <div class="highlight-item">
+                            <div class="highlight-icon icon--purple">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <strong>Garansi 1x Revisi</strong>
+                                <p>Jaminan penyesuaian gratis jika hasil belum sesuai panduan awal.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- About Visual / Stats Box -->
+                <div class="about-visual" aria-hidden="true">
+                    <div class="about-card">
+                        <div class="about-card__header">
+                            <div class="about-badge">STANDAR MUTU KERJA</div>
+                            <p>Ringkasan Kinerja DigiOffice</p>
+                        </div>
+
+                        <div class="about-stat-grid">
+                            <div class="about-stat">
+                                <strong>50+</strong>
+                                <span>Klien Terlayani</span>
+                            </div>
+                            <div class="about-stat">
+                                <strong>100+</strong>
+                                <span>Dokumen & File</span>
+                            </div>
+                            <div class="about-stat">
+                                <strong>3</strong>
+                                <span>Spesialisasi Jasa</span>
+                            </div>
+                            <div class="about-stat">
+                                <strong>100%</strong>
+                                <span>Privasi Terjaga</span>
+                            </div>
+                        </div>
+
+                        <div class="about-location">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                                <circle cx="12" cy="10" r="3" />
+                            </svg>
+                            <span>Surakarta, Jawa Tengah, Indonesia</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================================
+       ALUR PEMESANAN
+  ============================================================ -->
+    <section class="section" id="alur">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Alur Kerja</span>
+                <h2 class="section-title">Empat Langkah Mudah Memesan</h2>
+                <p class="section-desc">Proses sederhana dari pengisian formulir hingga penyerahan hasil akhir.</p>
+            </div>
+
+            <div class="steps-grid">
+                <div class="step-item">
+                    <div class="step-number">01</div>
+                    <h4>Isi Formulir</h4>
+                    <p>Tentukan kategori layanan, deskripsi pekerjaan, dan tenggat waktu yang Anda butuhkan.</p>
+                </div>
+
+                <div class="step-arrow" aria-hidden="true">→</div>
+
+                <div class="step-item">
+                    <div class="step-number">02</div>
+                    <h4>Konfirmasi WA</h4>
+                    <p>Terhubung langsung ke WhatsApp admin untuk mengirim berkas referensi dan konfirmasi total biaya.
+                    </p>
+                </div>
+
+                <div class="step-arrow" aria-hidden="true">→</div>
+
+                <div class="step-item">
+                    <div class="step-number">03</div>
+                    <h4>Pengerjaan Rapi</h4>
+                    <p>Admin mengerjakan naskah, spreadsheet, atau desain Anda dengan teliti sesuai instruksi.</p>
+                </div>
+
+                <div class="step-arrow" aria-hidden="true">→</div>
+
+                <div class="step-item">
+                    <div class="step-number">04</div>
+                    <h4>Terima Hasil</h4>
+                    <p>File final diserahkan tepat waktu dengan garansi satu kali revisi penyesuaian minor.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================================
+       FAQ ACCORDION
+  ============================================================ -->
+    <section class="section section--alt" id="faq">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Tanya Jawab</span>
+                <h2 class="section-title">Pertanyaan Umum (FAQ)</h2>
+                <p class="section-desc">Informasi seputar waktu pengerjaan, format berkas, cara pembayaran, dan
+                    kebijakan revisi.</p>
+            </div>
+
+            <div class="faq-list">
+
+                <div class="faq-item">
+                    <button type="button" class="faq-question" aria-expanded="false">
+                        <span>Berapa lama rata-rata waktu pengerjaan pesanan?</span>
+                        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9" />
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Waktu pengerjaan disesuaikan dengan volume dan kompleksitas. Dokumen pengetikan 10–25 halaman
+                            umumnya selesai dalam 1–2 hari kerja. Pengolahan Excel dan desain grafis standar berkisar
+                            antara 1–3 hari kerja. Anda dapat menyepakati deadline darurat langsung via WhatsApp.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button type="button" class="faq-question" aria-expanded="false">
+                        <span>Bagaimana cara mengirim berkas mentah atau referensi pekerjaan?</span>
+                        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9" />
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Setelah mengirimkan formulir di website, Anda diarahkan ke WhatsApp. Di sana Anda dapat
+                            langsung melampirkan berkas foto tulisan tangan, dokumen Word/PDF lama, naskah cetak, data
+                            spreadsheet mentah, atau tautan Google Drive.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button type="button" class="faq-question" aria-expanded="false">
+                        <span>Apakah ada jaminan revisi jika ada ketidaksesuaian?</span>
+                        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9" />
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Ya. Setiap pesanan mendapatkan garansi 1x revisi gratis selama tidak keluar dari instruksi
+                            awal yang telah disepakati saat konfirmasi pemesanan.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button type="button" class="faq-question" aria-expanded="false">
+                        <span>Bagaimana metode pembayaran yang didukung?</span>
+                        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9" />
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Kami menerima transfer bank lokal (BCA, Mandiri, BRI, BNI), QRIS, serta e-wallet (GoPay, OVO,
+                            Dana). Nomor rekening dan detail invoice resmi diinformasikan oleh admin via WhatsApp
+                            setelah rincian biaya disepakati.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button type="button" class="faq-question" aria-expanded="false">
+                        <span>Apakah kerahasiaan data dan dokumen saya aman?</span>
+                        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9" />
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Sangat aman. DigiOffice menjunjung tinggi privasi akademis dan bisnis. Naskah, laporan
+                            keuangan, dan data pribadi tidak akan pernah dipublikasikan atau dibagikan ke pihak mana
+                            pun.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================================
+       KONTAK
+  ============================================================ -->
+    <section class="section" id="kontak">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Informasi Kontak</span>
+                <h2 class="section-title">Hubungi DigiOffice</h2>
+                <p class="section-desc">Punya pertanyaan seputar layanan atau ingin konsultasi naskah? Hubungi kami
+                    melalui saluran berikut.</p>
+            </div>
+
+            <div class="contact-grid">
+                <!-- WhatsApp -->
+                <a href="https://wa.me/6281575673484" target="_blank" rel="noopener noreferrer"
+                    class="contact-card contact-card--wa">
+                    <div class="contact-card__icon">
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z" />
+                        </svg>
+                    </div>
+                    <div class="contact-card__content">
+                        <strong>Nomor WhatsApp</strong>
+                        <span>081575673484</span>
+                        <small>Klik untuk chat langsung ke admin</small>
+                    </div>
+                </a>
+
+                <!-- Email -->
+                <a href="mailto:raditrahmadhan224@gmail.com" class="contact-card contact-card--email">
+                    <div class="contact-card__icon">
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                            <polyline points="22,6 12,13 2,6" />
+                        </svg>
+                    </div>
+                    <div class="contact-card__content">
+                        <strong>Alamat Email</strong>
+                        <span>raditrahmadhan224@gmail.com</span>
+                        <small>Klik untuk mengirim email resmi</small>
+                    </div>
+                </a>
+
+                <!-- Location -->
+                <a href="https://maps.google.com/?q=Surakarta,+Jawa+Tengah" target="_blank" rel="noopener noreferrer"
+                    class="contact-card contact-card--location">
+                    <div class="contact-card__icon">
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                            <circle cx="12" cy="10" r="3" />
+                        </svg>
+                    </div>
+                    <div class="contact-card__content">
+                        <strong>Lokasi Layanan</strong>
+                        <span>Surakarta, Jawa Tengah</span>
+                        <small>Buka di Google Maps</small>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+    <footer class="footer">
+        <div class="container footer__inner">
+            <div class="footer__col footer__col--brand">
+                <a href="#beranda" class="navbar__logo footer__logo">
+                    <span class="logo-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.5">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                            <line x1="8" y1="21" x2="16" y2="21" />
+                            <line x1="12" y1="17" x2="12" y2="21" />
+                        </svg>
+                    </span>
+                    <span class="logo-text">Digi<span class="logo-accent">Office</span></span>
+                </a>
+                <p>
+                    Layanan administrasi digital profesional di Surakarta. Membantu pengetikan dokumen, otomasi Excel,
+                    dan pembuatan materi desain grafis berkualitas.
+                </p>
+                <a href="https://wa.me/6281575673484" class="btn btn--primary btn--sm" target="_blank"
+                    rel="noopener noreferrer" style="margin-top: 0.5rem; width: fit-content;">
+                    Chat WhatsApp Admin
+                </a>
+            </div>
+
+            <div class="footer__col">
+                <h4>Layanan</h4>
+                <ul>
+                    <li><a href="#layanan">Pengetikan Dokumen</a></li>
+                    <li><a href="#layanan">Pengolahan Data Excel</a></li>
+                    <li><a href="#layanan">Desain Grafis Dasar</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__col">
+                <h4>Navigasi</h4>
+                <ul>
+                    <li><a href="#beranda">Beranda</a></li>
+                    <li><a href="#harga">Daftar Harga</a></li>
+                    <li><a href="#kalkulator">Kalkulator Estimasi</a></li>
+                    <li><a href="#pesan">Formulir Pemesanan</a></li>
+                    <li><a href="#tentang">Tentang Kami</a></li>
+                    <li><a href="admin.html">Admin Workspace</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__col">
+                <h4>Kontak Resmi</h4>
+                <ul>
+                    <li>
+                        <a href="https://wa.me/6281575673484" target="_blank" rel="noopener noreferrer">081575673484</a>
+                    </li>
+                    <li>
+                        <a href="mailto:raditrahmadhan224@gmail.com">raditrahmadhan224@gmail.com</a>
+                    </li>
+                    <li>Surakarta, Jawa Tengah</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer__bottom">
+            <div class="container">
+                <p>© <span id="year">2026</span> DigiOffice. Seluruh hak cipta dilindungi.</p>
+                <p>Solusi administrasi digital terpercaya, efisien, dan profesional.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- ============================================================
+       FLOATING ELEMENTS
+  ============================================================ -->
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/6281575673484" class="float-wa" target="_blank" rel="noopener noreferrer"
+        title="Chat WhatsApp Langsung">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z" />
+        </svg>
+        <span class="float-wa__tooltip">Chat WhatsApp Admin</span>
+    </a>
+
+    <!-- Back to Top Button -->
+    <button type="button" class="back-to-top" id="backToTop" aria-label="Kembali ke atas halaman"
+        title="Kembali ke atas">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="18 15 12 9 6 15" />
+        </svg>
+    </button>
+
+    <!-- Toast Notification Box -->
+    <div class="toast" id="toast" role="alert" aria-live="polite"></div>
+
+    <!-- JavaScript Engine (Classic Vanilla JS - Offline & file:// Compatible) -->
+    <script src="script.js"></script>
+</body>
+
+</html>

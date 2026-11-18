@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DigiOffice Admin Portal — Sistem Manajemen Pesanan Layanan Administrasi Digital">
+    <title>DigiOffice — Admin Workspace Portal</title>
+
+    <!-- Google Fonts: Plus Jakarta Sans & DM Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+
+    <!-- TOPBAR / ADMIN HEADER -->
+    <header class="admin-topbar">
+        <div class="topbar-inner">
+            <div class="brand-group">
+                <a href="index.html" class="admin-logo" title="Kembali ke Halaman Utama DigiOffice">
+                    <span class="logo-box">
+                        <svg viewBox="0 0 32 32" width="28" height="28" fill="none">
+                            <rect width="32" height="32" rx="8" fill="url(#admin-logo-grad)" />
+                            <path d="M10 9H18C21.3137 9 24 11.6863 24 15C24 18.3137 21.3137 21 18 21H10V9Z"
+                                stroke="white" stroke-width="2.4" stroke-linejoin="round" />
+                            <circle cx="16" cy="15" r="2.5" fill="#60A5FA" />
+                            <defs>
+                                <linearGradient id="admin-logo-grad" x1="0" y1="0" x2="32" y2="32"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#2563EB" />
+                                    <stop offset="1" stop-color="#8B5CF6" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </span>
+                    <span class="brand-name">Digi<span class="brand-hi">Office</span></span>
+                </a>
+                <span class="portal-badge">ADMIN WORKSPACE v2.4</span>
+            </div>
+
+            <!-- TOPBAR MIDDLE INFO -->
+            <div class="system-time-box" id="systemClock">
+                <span class="pulse-dot"></span>
+                <span id="currentTimeDisplay">WIB --:--:--</span>
+            </div>
+
+            <!-- TOPBAR ACTIONS -->
+            <div class="topbar-actions">
+                <a href="index.html" class="btn btn-outline btn-sm">
+                    <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="19" y1="12" x2="5" y2="12"></line>
+                        <polyline points="12 19 5 12 12 5"></polyline>
+                    </svg>
+                    <span>Website Utama</span>
+                </a>
+                <button type="button" class="btn btn-secondary btn-sm" id="exportDataBtn"
+                    title="Unduh data pesanan format JSON">
+                    <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="7 10 12 15 17 10"></polyline>
+                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
+                    <span>Ekspor Data</span>
+                </button>
+                <button type="button" class="btn btn-primary btn-sm" id="openManualOrderBtn">
+                    <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                    <span>+ Tambah Manual</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN ADMIN CONTENT -->
+    <main class="admin-main">
+        <div class="admin-container">
+
+            <!-- STORAGE TRANSPARENCY NOTICE BANNER -->
+            <div class="notice-banner">
+                <div class="notice-icon">💡</div>
+                <div class="notice-content">
+                    <strong>Penyimpanan Data Sesi: LocalStorage Browser (Frontend Standalone Mode)</strong>
+                    <p>Pesanan yang dibuat melalui formulir website tersimpan di penyimpanan lokal peramban Anda.
+                        Arsitektur modul ini telah dipisahkan secara bersih sehingga dapat langsung dihubungkan ke
+                        backend REST API (Node.js/PHP/Python) dan database (MySQL/PostgreSQL) di tahap pengembangan
+                        berikutnya.</p>
+                </div>
+                <div class="notice-actions">
+                    <button type="button" class="notice-btn" id="resetDemoBtn"
+                        title="Kembalikan data pesanan sampel demo">Reset Data Demo</button>
+                </div>
+            </div>
+
+            <!-- KPI STATS CARDS -->
+            <section class="kpi-grid">
+                <!-- KPI 1 -->
+                <div class="kpi-card">
+                    <div class="kpi-header">
+                        <span class="kpi-title">TOTAL PESANAN</span>
+                        <div class="kpi-icon-box blue">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="kpi-value" id="kpiTotalOrders">0</div>
+                    <div class="kpi-sub" id="kpiTotalOrdersSub">Seluruh berkas terdaftar</div>
+                </div>
+
+                <!-- KPI 2 -->
+                <div class="kpi-card">
+                    <div class="kpi-header">
+                        <span class="kpi-title">MENUNGGU KONFIRMASI</span>
+                        <div class="kpi-icon-box amber">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="kpi-value text-amber" id="kpiPendingOrders">0</div>
+                    <div class="kpi-sub">Perlu respon WhatsApp</div>
+                </div>
+
+                <!-- KPI 3 -->
+                <div class="kpi-card">
+                    <div class="kpi-header">
+                        <span class="kpi-title">SEDANG DIPROSES</span>
+                        <div class="kpi-icon-box purple">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="12" y1="2" x2="12" y2="6"></line>
+                                <line x1="12" y1="18" x2="12" y2="22"></line>
+                                <line x1="4.93" y1="4.93" x2="7.76" y2="7.76"></line>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="kpi-value text-purple" id="kpiInProgressOrders">0</div>
+                    <div class="kpi-sub">Dikerjakan oleh operator</div>
+                </div>
+
+                <!-- KPI 4 -->
+                <div class="kpi-card">
+                    <div class="kpi-header">
+                        <span class="kpi-title">SELESAI</span>
+                        <div class="kpi-icon-box emerald">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="kpi-value text-green" id="kpiCompletedOrders">0</div>
+                    <div class="kpi-sub">Hasil final terkirim</div>
+                </div>
+
+                <!-- KPI 5 -->
+                <div class="kpi-card kpi-card-highlight">
+                    <div class="kpi-header">
+                        <span class="kpi-title">ESTIMASI OMZET TRANSAKSI</span>
+                        <div class="kpi-icon-box blue-grad">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <line x1="12" y1="1" x2="12" y2="23"></line>
+                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="kpi-value font-mono text-blue" id="kpiTotalRevenue">Rp0</div>
+                    <div class="kpi-sub">Akumulasi estimasi pesanan</div>
+                </div>
+            </section>
+
+            <!-- CONTROLS & FILTER TOOLBAR -->
+            <section class="toolbar-card">
+                <div class="search-box-wrap">
+                    <svg class="search-icon" viewBox="0 0 24 24" width="18" height="18" fill="none"
+                        stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                    <input type="text" id="adminSearchInput" class="admin-search-field"
+                        placeholder="Cari pesanan berdasarkan ID, nama pelanggan, nomor WhatsApp, atau catatan...">
+                    <button type="button" class="clear-search-btn" id="clearSearchBtn"
+                        title="Hapus pencarian">✕</button>
+                </div>
+
+                <div class="filter-controls-group">
+                    <!-- STATUS FILTER BUTTONS -->
+                    <div class="status-tab-group" id="statusTabGroup">
+                        <button type="button" class="status-tab-btn active" data-status="all">Semua Status</button>
+                        <button type="button" class="status-tab-btn" data-status="Menunggu">Menunggu</button>
+                        <button type="button" class="status-tab-btn" data-status="Diproses">Diproses</button>
+                        <button type="button" class="status-tab-btn" data-status="Selesai">Selesai</button>
+                        <button type="button" class="status-tab-btn" data-status="Dibatalkan">Dibatalkan</button>
+                    </div>
+
+                    <!-- SERVICE DROPDOWN FILTER -->
+                    <div class="admin-select-wrap">
+                        <select id="adminServiceFilter" class="admin-select">
+                            <option value="all">Semua Layanan</option>
+                            <option value="Pengetikan Dokumen">Pengetikan Dokumen</option>
+                            <option value="Pengolahan Excel">Pengolahan Excel</option>
+                            <option value="Desain Grafis">Desain Grafis</option>
+                        </select>
+                    </div>
+
+                    <!-- SORT DROPDOWN -->
+                    <div class="admin-select-wrap">
+                        <select id="adminSortOrder" class="admin-select">
+                            <option value="newest">Waktu: Terbaru</option>
+                            <option value="oldest">Waktu: Terlama</option>
+                            <option value="highest">Estimasi: Tertinggi</option>
+                            <option value="lowest">Estimasi: Terendah</option>
+                        </select>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ORDERS TABLE / CARDS CONTAINER -->
+            <section class="orders-table-card">
+                <div class="table-header-meta">
+                    <h3 class="table-title">Daftar Antrean & Riwayat Pesanan</h3>
+                    <div class="table-counter">Menampilkan <strong id="visibleOrdersCount">0</strong> dari <span
+                            id="totalRegisteredOrdersCount">0</span> pesanan</div>
+                </div>
+
+                <!-- DESKTOP TABLE WRAPPER -->
+                <div class="table-responsive">
+                    <table class="admin-table" id="ordersTable">
+                        <thead>
+                            <tr>
+                                <th>ID Pesanan</th>
+                                <th>Waktu Masuk</th>
+                                <th>Pelanggan</th>
+                                <th>Layanan & Urgensi</th>
+                                <th>Berkas Terlampir</th>
+                                <th>Target Deadline</th>
+                                <th>Estimasi Biaya</th>
+                                <th>Status Pesanan</th>
+                                <th class="text-right">Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody id="ordersTableBody">
+                            <!-- Populated dynamically via JS -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- EMPTY STATE (WHEN NO ORDERS MATCH) -->
+                <div class="empty-state-card" id="emptyStateCard" style="display: none;">
+                    <div class="empty-icon-box">📭</div>
+                    <h4>Tidak Ada Pesanan Yang Cocok</h4>
+                    <p>Tidak ditemukan data pesanan yang sesuai dengan kata kunci pencarian atau filter yang Anda pilih
+                        saat ini.</p>
+                    <button type="button" class="btn btn-outline btn-sm" id="resetFiltersBtn">Reset Filter &
+                        Pencarian</button>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- FOOTER MINI -->
+    <footer class="admin-footer">
+        <div class="admin-container footer-flex">
+            <span>&copy; 2026 DigiOffice Management System. Standar Dark Luxury Digital Workspace.</span>
+            <span>Frontend Architecture v2.4</span>
+        </div>
+    </footer>
+
+    <!-- TOAST NOTIFICATION -->
+    <div id="adminToast" class="admin-toast" role="status" aria-live="polite">
+        <span class="toast-indicator" id="adminToastIcon">✓</span>
+        <span id="adminToastMsg">Pemberitahuan admin</span>
+    </div>
+
+    <!-- MODAL: ORDER DETAILS -->
+    <div id="orderDetailModal" class="admin-modal" aria-hidden="true" role="dialog" aria-modal="true">
+        <div class="modal-backdrop" id="detailModalBackdrop"></div>
+        <div class="modal-sheet">
+            <button type="button" class="modal-close" id="closeDetailModalBtn" aria-label="Tutup">✕</button>
+            <div class="modal-sheet-header">
+                <div class="modal-order-id-badge" id="modalOrderIdBadge">#DGO-2026-0000</div>
+                <h3 class="modal-sheet-title">Rincian Informasi Pesanan</h3>
+                <span class="modal-created-time" id="modalCreatedTime">Dibuat pada: --</span>
+            </div>
+
+            <div class="modal-sheet-body">
+                <!-- CUSTOMER BOX -->
+                <div class="detail-section">
+                    <h4 class="detail-section-title">Data Pemesan</h4>
+                    <div class="detail-grid-2">
+                        <div class="detail-item">
+                            <span class="d-label">Nama Lengkap</span>
+                            <strong class="d-val" id="modalCustName">-</strong>
+                        </div>
+                        <div class="detail-item">
+                            <span class="d-label">Nomor WhatsApp</span>
+                            <div class="wa-action-cell">
+                                <strong class="d-val" id="modalCustPhone">-</strong>
+                                <a href="#" id="modalDirectWaLink" target="_blank" rel="noopener noreferrer"
+                                    class="btn-wa-link">
+                                    Chat WA ↗
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SPECIFICATION BOX -->
+                <div class="detail-section">
+                    <h4 class="detail-section-title">Spesifikasi Pekerjaan</h4>
+                    <div class="detail-grid-3">
+                        <div class="detail-item">
+                            <span class="d-label">Kategori Layanan</span>
+                            <strong class="d-val text-blue" id="modalService">-</strong>
+                        </div>
+                        <div class="detail-item">
+                            <span class="d-label">Tingkat Kecepatan</span>
+                            <strong class="d-val" id="modalSpeed">Reguler</strong>
+                        </div>
+                        <div class="detail-item">
+                            <span class="d-label">Estimasi Unit</span>
+                            <strong class="d-val" id="modalQuantity">5 Unit</strong>
+                        </div>
+                    </div>
+                    <div class="detail-grid-2 mt-2">
+                        <div class="detail-item">
+                            <span class="d-label">Target Deadline</span>
+                            <strong class="d-val" id="modalDeadline">-</strong>
+                        </div>
+                        <div class="detail-item">
+                            <span class="d-label">Estimasi Total Biaya</span>
+                            <strong class="d-val text-blue font-mono" id="modalPrice">-</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FILE ATTACHMENT BOX -->
+                <div class="detail-section">
+                    <h4 class="detail-section-title">Berkas Terlampir</h4>
+                    <div class="file-attachment-display" id="modalFileAttachment">
+                        <span class="file-icon-box">📎</span>
+                        <div class="file-desc">
+                            <strong id="modalFileName">Tidak ada berkas yang diunggah</strong>
+                            <small id="modalFileSize">-</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TASK NOTES / INSTRUCTIONS -->
+                <div class="detail-section">
+                    <h4 class="detail-section-title">Instruksi & Catatan Khusus Klien</h4>
+                    <div class="notes-container" id="modalNotes">
+                        -
+                    </div>
+                </div>
+
+                <!-- STATUS CONTROLLER -->
+                <div class="detail-section status-change-section">
+                    <h4 class="detail-section-title">Ubah Status Pesanan</h4>
+                    <div class="status-btn-group">
+                        <button type="button" class="btn-status-switch" data-set-status="Menunggu">Menunggu</button>
+                        <button type="button" class="btn-status-switch" data-set-status="Diproses">Diproses</button>
+                        <button type="button" class="btn-status-switch" data-set-status="Selesai">Selesai</button>
+                        <button type="button" class="btn-status-switch" data-set-status="Dibatalkan">Dibatalkan</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-sheet-footer">
+                <button type="button" class="btn btn-outline" id="closeDetailModalSecondary">Tutup</button>
+                <button type="button" class="btn btn-danger-outline" id="modalDeleteOrderBtn">Hapus Pesanan</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL: MANUAL ADD ORDER -->
+    <div id="manualOrderModal" class="admin-modal" aria-hidden="true" role="dialog" aria-modal="true">
+        <div class="modal-backdrop" id="manualModalBackdrop"></div>
+        <div class="modal-sheet">
+            <button type="button" class="modal-close" id="closeManualModalBtn" aria-label="Tutup">✕</button>
+            <div class="modal-sheet-header">
+                <h3 class="modal-sheet-title">Tambah Pesanan Manual</h3>
+                <span class="modal-created-time">Gunakan form ini untuk mencatat pesanan yang masuk di luar web</span>
+            </div>
+
+            <form id="manualOrderForm" class="modal-sheet-body">
+                <div class="admin-form-group">
+                    <label class="admin-form-label">Nama Pelanggan <span class="req">*</span></label>
+                    <input type="text" id="manualName" class="admin-form-input" placeholder="Nama pemesan" required>
+                </div>
+
+                <div class="admin-form-group">
+                    <label class="admin-form-label">Nomor WhatsApp <span class="req">*</span></label>
+                    <input type="tel" id="manualPhone" class="admin-form-input" placeholder="Contoh: 081234567890"
+                        required>
+                </div>
+
+                <div class="admin-form-row-2">
+                    <div class="admin-form-group">
+                        <label class="admin-form-label">Layanan <span class="req">*</span></label>
+                        <select id="manualService" class="admin-form-input" required>
+                            <option value="Pengetikan Dokumen">Pengetikan Dokumen</option>
+                            <option value="Pengolahan Excel">Pengolahan Excel</option>
+                            <option value="Desain Grafis">Desain Grafis</option>
+                        </select>
+                    </div>
+                    <div class="admin-form-group">
+                        <label class="admin-form-label">Kecepatan</label>
+                        <select id="manualSpeed" class="admin-form-input">
+                            <option value="Reguler">Reguler</option>
+                            <option value="Express">Express Kilat</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="admin-form-row-2">
+                    <div class="admin-form-group">
+                        <label class="admin-form-label">Target Deadline <span class="req">*</span></label>
+                        <input type="date" id="manualDeadline" class="admin-form-input" required>
+                    </div>
+                    <div class="admin-form-group">
+                        <label class="admin-form-label">Estimasi Biaya (Rp) <span class="req">*</span></label>
+                        <input type="number" id="manualPrice" class="admin-form-input" value="25000" min="5000"
+                            step="1000" required>
+                    </div>
+                </div>
+
+                <div class="admin-form-group">
+                    <label class="admin-form-label">Catatan / Detail Instruksi</label>
+                    <textarea id="manualNotes" class="admin-form-input" rows="3"
+                        placeholder="Rincian pesanan..."></textarea>
+                </div>
+
+                <div class="modal-sheet-footer">
+                    <button type="button" class="btn btn-outline" id="closeManualModalSecondary">Batal</button>
+                    <button type="submit" class="btn btn-primary">Simpan Pesanan</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- ADMIN LOGIC SCRIPT -->
+    <script src="admin.js"></script>
+</body>
+
+</html>
